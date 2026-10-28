@@ -56,4 +56,5 @@ function errorResponse(res, message, status, details = null) {
 // JOI VALIDATION SCHEMA
 
 const biodataSchema = Joi.object({    id: Joi.number().integer().positive(),
+    id: Joi.number().integer().positive(),
    
