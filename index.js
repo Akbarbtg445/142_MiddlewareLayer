@@ -8,7 +8,7 @@ const {Pool} = pg
 const pool = new Pool({
     user:'postgres',
     host:'localhost',
-    database:'mahasiswa',
+    database:'Mahasiswa',
     password:'123',
     port: 5432,
 })
@@ -112,8 +112,8 @@ function validateParams(schema) {
     }
 }
 app.get('/',async(req,res)=>{
-    const result = await Pool.query(
-        'SELECT * FROM biodata ORDER NY id'
+    const result = await pool.query(
+        'SELECT * FROM biodata ORDER BY id'
     )
 
     return successResponse(
