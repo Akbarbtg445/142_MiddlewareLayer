@@ -57,4 +57,5 @@ function errorResponse(res, message, status, details = null) {
 
 const biodataSchema = Joi.object({    id: Joi.number().integer().positive(),
     id: Joi.number().integer().positive(),
-   
+    nama: Joi.string().trim().min(2).max(100).required(),
+    
