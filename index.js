@@ -115,5 +115,10 @@ app.get('/',async(req,res)=>{
     const result = await Pool.query(
         'SELECT * FROM biodata ORDER NY id'
     )
-    
+
+    return successResponse(
+        res,
+        'Data berhasil diambil',
+        result.rows
+    )
 })
