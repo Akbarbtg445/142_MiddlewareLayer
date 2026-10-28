@@ -179,7 +179,7 @@ app.delete(
         const {id} =req.params
 
         const result= await pool.query(
-            'Delete FROM biodata WHERE id = $1 RETURUNING *',
+            `Delete FROM biodata WHERE id = $1 RETURNING *`,
             [id]
         )
         if (result.rowCount === 0) {
