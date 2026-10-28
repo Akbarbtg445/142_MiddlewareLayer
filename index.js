@@ -74,5 +74,19 @@ function validateBody(schema) {
             convert: true,
             allowUnokown: false,
         })
+
+        if (error) {
+            return errorResponse(
+                res,
+                'Validasi input gagal',
+                400,
+                error.details.map(item => ({
+                    field: item.path.join('.'),
+                    message: item.message,
+                }))
+            )
+        }
+        req.body = value
+        next()
     }
 }
