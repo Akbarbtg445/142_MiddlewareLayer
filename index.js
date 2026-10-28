@@ -4,8 +4,8 @@ import Joi from 'joi'
 
 const app = express()
 const port = 3000
-const {Poll} = pg
-const poll = new Poll({
+const {Pool} = pg
+const pool = new Pool({
     user:'postgres',
     host:'localhost',
     database:'mahasiswa',
@@ -217,6 +217,6 @@ app.use((err, req, res, next) => {
     )
 })
 
-app.listen(port,()=>{
+app.listen( port,()=> {
     console.log('App running on port ${port}.')
 })
