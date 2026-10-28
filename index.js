@@ -65,3 +65,8 @@ const biodataSchema = Joi.object({    id: Joi.number().integer().positive(),
 const idSchema = Joi.object({
     id: Joi.number().integer().positive().required(),
 })
+
+//middlewere untuk validasi body
+function validateBody(schema) {
+    
+}
